@@ -7,11 +7,11 @@ import java.util.List;
 public class MobilePhone {
 
     private String myNumber;
-    private ArrayList<Contact> myContacts;
+    private List<Contact> myContacts;
 
-    public MobilePhone(String myNumber,ArrayList<Contact> myContacts) {
+    public MobilePhone(String myNumber,List<Contact> myContacts) {
         this.myNumber = myNumber;
-        this.myContacts = new ArrayList<>();
+        this.myContacts = myContacts;
     }
 
     public String getMyNumber() {
@@ -22,7 +22,7 @@ public class MobilePhone {
         this.myNumber = myNumber;
     }
 
-    public ArrayList<Contact> getMyContacts() {
+    public List<Contact> getMyContacts() {
         return myContacts;
     }
 
@@ -59,13 +59,8 @@ public class MobilePhone {
     }
 
     public int findContact(Contact param){
-        for(int i = 0; i<myContacts.size();i++){
-            Contact currentContact = myContacts.get(i);
-            if(myContacts.contains(param)){
-                return i;
-            }
-        }
-        return -1;
+
+        return myContacts.indexOf(param);
     }
     public int findContact(String param) {
         for (int i = 0; i < myContacts.size(); i++) {
@@ -88,9 +83,8 @@ public class MobilePhone {
     }
 
      public void printContact(){
-         System.out.println("Liste :");
         for(int i = 0; i<myContacts.size();i++){
-            System.out.println(myContacts);
+            System.out.println((i+1) + "." + myContacts.get(i).getName() + "->" + myContacts.get(i).getPhoneNumber());
         }
     }
 

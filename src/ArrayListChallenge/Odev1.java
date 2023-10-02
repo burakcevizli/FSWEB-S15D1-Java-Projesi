@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Odev1 {
     static Scanner scanner = new Scanner(System.in);
-    static List<String> groceryList = new ArrayList<>();
+    static List<String> groceryList = new LinkedList<>();
     public static void main(String[] args) {
 
         while (true) {
@@ -17,7 +17,7 @@ public class Odev1 {
             switch (sayi) {
                 case 0:
                     System.out.println("Uygulama kapatıldı.");
-                    return;
+                    System.exit(0);
 
                 case 1:
                     System.out.println("Eklenmesini istediğiniz elemanları giriniz");
